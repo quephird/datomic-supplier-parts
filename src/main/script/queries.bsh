@@ -1,0 +1,42 @@
+db = conn.db();
+
+// TODO: Need to be able to pass in a set of attributes
+// and dynamically print each one of them
+void printSuppliers(Set results) {
+  for (Object result : results) {
+    supplier = db.entity(result.get(0));
+    System.out.println(supplier.get(":supplier/business-key") + "\t" +
+  	               supplier.get(":supplier/name") + "\t" +
+  	               supplier.get(":supplier/city"));
+  }
+  print("");
+}
+
+print("All suppliers:") ;
+results = Peer.q("[:find ?s :where [?s :supplier/name]]", db) ;
+printSuppliers(results);
+
+print("Suppliers named Blake:");
+results = Peer.q("[:find ?s :where [?s :supplier/name \"Blake\"]]", db) ;
+printSuppliers(results);
+
+print("Suppliers located in Paris:");
+results = Peer.q("[:find ?s :where [?s :supplier/city \"Paris\"]]", db) ;
+printSuppliers(results);
+
+print("Suppliers _not_ named Clark:");
+results = Peer.q("[:find ?s :where [?s :supplier/name ?n] [(!= ?n \"Clark\")]]", db) ;
+printSuppliers(results);
+
+print("Suppliers not named Clark and located in London:");
+results = Peer.q("[:find ?s :where [?s :supplier/name ?n] [(!= ?n \"Clark\")] [?s :supplier/city \"London\"]] ", db) ;
+printSuppliers(results);
+
+print("Suppliers which have at least one part available:") ;
+results = Peer.q("[:find ?s :where [?s :supplier/name _][_ :supplier-part/supplier ?s]]", db) ;
+printSuppliers(results);
+
+print("Suppliers who carry P4:") ;
+results = Peer.q("[:find ?s :where [?s :supplier/name _][?sp :supplier-part/supplier ?s][?sp :supplier-part/part ?p][?p :part/business-key \"P4\"]]", db) ;
+printSuppliers(results);
+

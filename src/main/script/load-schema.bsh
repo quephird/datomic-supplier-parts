@@ -1,0 +1,15 @@
+uri = "datomic:mem://supplier-parts";
+Peer.createDatabase(uri);
+conn = Peer.connect(uri);
+
+void loadFromFile(String fileName) {
+  br = new BufferedReader(new FileReader(fileName));
+  tx = Util.readAll(br).get(0);
+  txResult = conn.transact(tx).get();
+  br.close();
+}
+
+loadFromFile("./schema.dtm") ;
+
+loadFromFile("./data.dtm") ;
+

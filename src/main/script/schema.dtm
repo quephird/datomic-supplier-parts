@@ -1,0 +1,106 @@
+[
+ ;; supplier
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :supplier/business-key
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The business key of the supplier"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :supplier/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "A supplier's name"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :supplier/status
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "A supplier's status"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :supplier/city
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A supplier's city"
+  :db.install/_attribute :db.part/db}
+
+ ;; supplier/status enum values
+
+ [:db/add #db/id[:db.part/user] :db/ident :supplier.status/ten]
+ [:db/add #db/id[:db.part/user] :db/ident :supplier.status/twenty]
+ [:db/add #db/id[:db.part/user] :db/ident :supplier.status/thirty]
+
+ ;; parts
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :part/business-key
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The business key of the part"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :part/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/fulltext true
+  :db/doc "The name of the part"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :part/color
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "The part's color"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :part/weight
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "The part's weight"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :part/city
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The city where the part is made"
+  :db.install/_attribute :db.part/db}
+
+ ;; part/color enum values
+ [:db/add #db/id[:db.part/user] :db/ident :part.color/red]
+ [:db/add #db/id[:db.part/user] :db/ident :part.color/green]
+ [:db/add #db/id[:db.part/user] :db/ident :part.color/blue]
+
+  ;; supplier-parts
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :supplier-part/supplier
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "The supplier"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+  :db/ident :supplier-part/part
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/one
+  :db/doc "The part"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :supplier-part/quantity
+  :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db/doc "The quantity of this part available from this supplier"
+  :db.install/_attribute :db.part/db}
+
+]
+ 

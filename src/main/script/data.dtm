@@ -1,0 +1,117 @@
+[
+ {:db/id #db/id[:db.part/user -1000001],
+  :supplier/business-key "S1",
+  :supplier/name "Smith",
+  :supplier/status :supplier.status/twenty,
+  :supplier/city "London"}
+ {:db/id #db/id[:db.part/user -1000002],
+  :supplier/business-key "S2",
+  :supplier/name "Jones",
+  :supplier/status :supplier.status/ten,
+  :supplier/city "Paris"}
+ {:db/id #db/id[:db.part/user -1000003],
+  :supplier/business-key "S3",
+  :supplier/name "Blake",
+  :supplier/status :supplier.status/thirty,
+  :supplier/city "Paris"}
+ {:db/id #db/id[:db.part/user -1000004],
+  :supplier/business-key "S4",
+  :supplier/name "Clark",
+  :supplier/status :supplier.status/twenty,
+  :supplier/city "London"}
+ {:db/id #db/id[:db.part/user -1000005],
+  :supplier/business-key "S5",
+  :supplier/name "Adams",
+  :supplier/status :supplier.status/thirty,
+  :supplier/city "Athens"}
+
+ {:db/id #db/id[:db.part/user -1000011],
+  :part/business-key "P1",
+  :part/name "Nut",
+  :part/color :part.color/red,
+  :part/weight 12,
+  :part/city "London"}
+ {:db/id #db/id[:db.part/user -1000012],
+  :part/business-key "P2",
+  :part/name "Bolt",
+  :part/color :part.color/green,
+  :part/weight 17,
+  :part/city "Paris"}
+ {:db/id #db/id[:db.part/user -1000013],
+  :part/business-key "P3",
+  :part/name "Screw",
+  :part/color :part.color/blue,
+  :part/weight 17,
+  :part/city "Oslo"}
+ {:db/id #db/id[:db.part/user -1000014],
+  :part/business-key "P4",
+  :part/name "Screw",
+  :part/color :part.color/red,
+  :part/weight 14,
+  :part/city "London"}
+ {:db/id #db/id[:db.part/user -1000015],
+  :part/business-key "P5",
+  :part/name "Cam",
+  :part/color :part.color/blue,
+  :part/weight 12,
+  :part/city "Paris"}
+ {:db/id #db/id[:db.part/user -1000016],
+  :part/business-key "P6",
+  :part/name "Cog",
+  :part/color :part.color/red,
+  :part/weight 19,
+  :part/city "London"}
+
+ {:db/id #db/id[:db.part/user -1000101],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000011],
+  :supplier-part/quantity 300}
+ {:db/id #db/id[:db.part/user -1000102],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000012],
+  :supplier-part/quantity 200}
+ {:db/id #db/id[:db.part/user -1000103],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000013],
+  :supplier-part/quantity 400}
+ {:db/id #db/id[:db.part/user -1000104],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000014],
+  :supplier-part/quantity 200}
+ {:db/id #db/id[:db.part/user -1000105],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000015],
+  :supplier-part/quantity 100}
+ {:db/id #db/id[:db.part/user -1000106],
+  :supplier-part/supplier #db/id[:db.part/user -1000001],
+  :supplier-part/part #db/id[:db.part/user -1000016],
+  :supplier-part/quantity 100}
+
+ {:db/id #db/id[:db.part/user -1000107],
+  :supplier-part/supplier #db/id[:db.part/user -1000002],
+  :supplier-part/part #db/id[:db.part/user -1000011],
+  :supplier-part/quantity 300}
+ {:db/id #db/id[:db.part/user -1000108],
+  :supplier-part/supplier #db/id[:db.part/user -1000002],
+  :supplier-part/part #db/id[:db.part/user -1000012],
+  :supplier-part/quantity 400}
+
+ {:db/id #db/id[:db.part/user -1000109],
+  :supplier-part/supplier #db/id[:db.part/user -1000003],
+  :supplier-part/part #db/id[:db.part/user -1000012],
+  :supplier-part/quantity 200}
+
+ {:db/id #db/id[:db.part/user -1000110],
+  :supplier-part/supplier #db/id[:db.part/user -1000004],
+  :supplier-part/part #db/id[:db.part/user -1000012],
+  :supplier-part/quantity 200}
+ {:db/id #db/id[:db.part/user -1000111],
+  :supplier-part/supplier #db/id[:db.part/user -1000004],
+  :supplier-part/part #db/id[:db.part/user -1000014],
+  :supplier-part/quantity 300}
+ {:db/id #db/id[:db.part/user -1000112],
+  :supplier-part/supplier #db/id[:db.part/user -1000004],
+  :supplier-part/part #db/id[:db.part/user -1000015],
+  :supplier-part/quantity 400}
+]
+
